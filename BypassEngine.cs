@@ -1,3 +1,5 @@
+using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace RJ_VC_Bypass;

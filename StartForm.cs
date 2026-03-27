@@ -1,3 +1,5 @@
+using System.Net;
+
 namespace RJ_VC_Bypass;
 
 public class StartForm : Form
@@ -284,11 +286,6 @@ public class StartForm : Form
             // Query Supabase for license
             string apiUrl = $"{AppConfig.SUPABASE_URL}/rest/v1/licenses?username=eq.{username}&select=*";
 
-            using var request = new HttpRequestMessage(HttpMethod.Get, apiUrl);
-            request.Headers.Add("apikey", AppConfig.SUPABASE_API_KEY);
-            request.Headers.Add("Authorization", $"Bearer {AppConfig.SUPABASE_ANON_KEY}");
-
-            var response = await _httpHelper.ToString(); // Get raw response
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("apikey", AppConfig.SUPABASE_API_KEY);
             httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {AppConfig.SUPABASE_ANON_KEY}");

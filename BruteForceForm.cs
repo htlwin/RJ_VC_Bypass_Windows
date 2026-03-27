@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace RJ_VC_Bypass;
 
 public class BruteForceForm : Form
